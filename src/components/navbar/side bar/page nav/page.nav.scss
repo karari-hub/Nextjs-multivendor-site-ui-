@@ -1,0 +1,15 @@
+@import "./../../../../theme/theme.scss";
+
+.side-bar-profile {
+	@include themify($themes) {
+		.profile-links {
+			h6 {
+				color: themed("titleColor");
+			}
+			.side-bar-icon {
+				font-size: 18px;
+				color: themed("icon");
+			}
+		}
+	}
+}

@@ -1,0 +1,74 @@
+@import "./../../../../theme/theme.scss";
+
+.payment-tag {
+	@include themify($themes) {
+		margin-top: 100px;
+		margin-bottom: 30px;
+
+		@media (max-width: 600px) {
+			margin-top: 60px;
+		}
+		.payment-tag-contaniner {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+			flex-wrap: wrap;
+
+			@media (max-width: 600px) {
+				gap: 5px;
+			}
+
+			h5 {
+				font-size: 16px;
+				color: themed("border");
+
+				@media (max-width: 600px) {
+					font-size: 15px;
+				}
+			}
+
+			.logo-wrapper {
+				display: flex;
+				gap: 20px;
+				align-items: center;
+				justify-content: space-evenly;
+				gap: 20px;
+				padding: 10px 0;
+				flex-wrap: wrap;
+
+				@media (max-width: 500px) {
+					gap: 8px;
+				}
+
+				.logos-container {
+					position: relative;
+
+					.logo-picture {
+						object-fit: contain;
+					}
+				}
+
+				.mpesa {
+					height: clamp(25px, 5vw, 37px);
+					width: clamp(52px, 15vw, 78px);
+				}
+
+				.master-card {
+					height: clamp(25px, 5vw, 37px);
+					width: clamp(44px, 10vw, 66px);
+				}
+
+				.visa {
+					height: clamp(12px, 3vw, 18px);
+					width: clamp(39px, 10vw, 59px);
+				}
+
+				.paypal {
+					height: clamp(20px, 4vw, 30px);
+					width: clamp(70px, 20vw, 105px);
+				}
+			}
+		}
+	}
+}

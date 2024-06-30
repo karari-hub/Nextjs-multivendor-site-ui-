@@ -1,0 +1,16 @@
+@import "../theme/theme.scss";
+
+.home {
+	@include themify($themes) {
+		background-color: themed("background");
+		overflow: hidden;
+
+		.home-contaniner {
+			margin: 0 7%;
+
+			@media (max-width: 500px) {
+				margin: 10px;
+			}
+		}
+	}
+}

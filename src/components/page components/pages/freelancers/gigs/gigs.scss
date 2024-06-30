@@ -1,0 +1,83 @@
+@import "./../../../../../theme/theme.scss";
+
+.gigs {
+	@include themify($themes) {
+		background-color: themed("background");
+		position: absolute;
+		top: 35vh;
+		width: 100%;
+
+		@media (max-width: 900px) {
+			top: 250px;
+		}
+
+		.gigs-wrapper {
+			margin: 20px 330px 20px 10px;
+			height: auto;
+
+			@media (max-width: 900px) {
+				margin: 420px 10px 10px 10px;
+			}
+
+			.gigs-navigation {
+				display: flex;
+				margin-left: 30px;
+				gap: 20px;
+				flex-wrap: wrap;
+
+				@media (max-width: 900px) {
+					margin-left: 0;
+					justify-content: center;
+					gap: 3vw;
+				}
+
+				.nav-btn {
+					padding: 3px 8px;
+					border-radius: 12px;
+					cursor: pointer;
+					border: 1px solid themed("border");
+					background-color: transparent;
+					transition: all 0.2s;
+
+					&:hover {
+						background-color: themed("hover");
+					}
+
+					h6 {
+						font-size: 11px;
+						color: themed("softTitleColor");
+					}
+
+					&.nav-btn-active {
+						background-color: $main;
+
+						h6 {
+							color: white;
+						}
+					}
+				}
+			}
+
+			.gigs-post-container {
+				margin-top: 10px;
+				height: 100%;
+				width: 100%;
+
+				display: grid;
+				//	grid-auto-rows: clamp(200px, 30vw, 250px);
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 7px 7px;
+				justify-content: space-evenly;
+				align-content: center;
+
+				@media (max-width: 650px) {
+					grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				}
+
+				@media (max-width: 350px) {
+					grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+				}
+			}
+		}
+	}
+}

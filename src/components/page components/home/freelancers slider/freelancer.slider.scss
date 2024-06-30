@@ -1,0 +1,106 @@
+@import "./../../../../theme/theme.scss";
+
+.freelancer-slider {
+	@include themify($themes) {
+		.freelancer-slider-heading {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-top: 40px;
+
+			h5 {
+				font-size: 25px;
+				color: themed("softTitleColor");
+				text-align: start;
+
+				@media (max-width: 500px) {
+					font-size: 21px;
+				}
+			}
+
+			.profile-card-container {
+				height: 250px;
+				border-radius: 10px;
+
+				.profile-wrapper {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 10px;
+					justify-content: space-evenly;
+
+					.card-image-container {
+						position: relative;
+						width: 100px;
+						height: 100px;
+						border-radius: 50%;
+						overflow: hidden;
+						cursor: pointer;
+
+						.freelancer-avatar {
+							object-fit: cover;
+						}
+					}
+
+					.username {
+						width: auto;
+						height: auto;
+						display: flex;
+						align-items: center;
+						gap: 5px;
+
+						h6 {
+							font-size: 15px;
+							color: themed("softTitleColor");
+							text-align: center;
+						}
+						.bluecheck {
+							color: rgb(0, 72, 255);
+						}
+					}
+
+					.occupation-container {
+						height: 20px;
+						width: auto;
+						padding: 4px 7px;
+						background-color: themed("hover");
+						border-radius: 10px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+
+						p {
+							font-size: 12px;
+							color: themed("softTitleColor");
+						}
+					}
+
+					p {
+						font-size: 10px;
+						color: themed("softTitleColor");
+
+						span {
+							color: themed("titleColor");
+							font-size: 11px;
+						}
+					}
+
+					button {
+						height: 30px;
+						width: auto;
+						border-radius: 7px;
+						padding: 4px 6px;
+						background-color: $main;
+						border: none;
+						cursor: pointer;
+
+						p {
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+}

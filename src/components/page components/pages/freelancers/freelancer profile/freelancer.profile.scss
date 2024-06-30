@@ -1,0 +1,209 @@
+@import "./../../../../../theme/theme.scss";
+
+.freelancer-profile {
+	@include themify($themes) {
+		position: fixed;
+		top: 50px;
+		right: 20px;
+		bottom: 20px;
+		width: 300px;
+		border-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 30px 0;
+		justify-content: space-between;
+		backdrop-filter: blur(17px) saturate(150%);
+		-webkit-backdrop-filter: blur(17px) saturate(150%);
+		background-color: themed("glass");
+		border: 1px solid themed("border2");
+		z-index: 5;
+
+		@media (max-width: 900px) {
+			position: absolute;
+			left: 20%;
+			right: 20%;
+			top: 100px;
+			width: auto;
+			height: 550px;
+		}
+
+		@media (max-width: 600px) {
+			left: 20px;
+			right: 20px;
+		}
+
+		.freelancer-info {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.freelancer-avatar-container {
+				width: 110px;
+				height: 110px;
+				border-radius: 50%;
+				position: relative;
+				overflow: hidden;
+				margin-bottom: 20px;
+
+				.freelancer-avatar {
+					object-fit: cover;
+				}
+			}
+
+			.username {
+				width: auto;
+				height: auto;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+
+				h5 {
+					font-size: 22px;
+				}
+				.bluecheck {
+					color: rgb(0, 72, 255);
+				}
+			}
+
+			p {
+				font-size: 12px;
+				color: themed("softTitleColor");
+			}
+
+			.freelancer-location {
+				display: flex;
+				gap: 4px;
+				margin: 10px 0;
+
+				.freelancer-location-icon {
+					color: themed("icon");
+				}
+			}
+		}
+
+		.freelancer-recommendation {
+			h6 {
+				font-size: 14px;
+				color: themed("softTitleColor");
+				font-weight: 500;
+			}
+		}
+
+		.freelancer-recommend-button {
+			margin-top: 7px;
+			padding: 4px 6px;
+			border: none;
+			background-color: $main;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: all 0.3s;
+
+			p {
+				color: white;
+				font-size: 12px;
+			}
+
+			&:hover {
+				background-color: $mainLight;
+			}
+		}
+
+		.message-and-report {
+			margin: 13px 0;
+			display: flex;
+			gap: 20px;
+			justify-content: space-evenly;
+
+			.freelancer-button {
+				padding: 4px 6px;
+				display: flex;
+				align-items: center;
+				gap: 3px;
+				border: none;
+
+				border-radius: 4px;
+				cursor: pointer;
+				transition: all 0.3s;
+
+				p {
+					color: white;
+					font-size: 11px;
+				}
+
+				&:hover {
+					background-color: $mainLight;
+				}
+			}
+
+			.message {
+				background-color: $main;
+
+				.freelancer-message-button-icon {
+					color: white;
+				}
+			}
+
+			.report {
+				background-color: transparent;
+				border: 1px solid themed("border");
+
+				.freelancer-report-button-icon {
+					color: red;
+				}
+
+				p {
+					color: themed("paragraphColor");
+				}
+
+				&:hover {
+					background-color: themed("hover");
+				}
+			}
+		}
+
+		.freelancer-skills {
+			padding: 5px 10px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			h6 {
+				font-size: 15px;
+			}
+
+			.skills-list {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 4px;
+
+				.skill-container {
+					padding: 2px 5px;
+					border: 1px solid themed("border");
+					border-radius: 10px;
+
+					p {
+						font-size: 11px;
+					}
+				}
+			}
+		}
+
+		.freelancer-about {
+			padding: 5px 10px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			h6 {
+				font-size: 15px;
+			}
+
+			p {
+				font-size: 12px;
+			}
+		}
+	}
+}

@@ -1,0 +1,128 @@
+@import "../../../theme/theme.scss";
+
+.float {
+	@include themify($themes) {
+		width: 98vw;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		border-top: 1px solid themed("border2");
+
+		@media (max-width: 650px) {
+			display: none;
+		}
+
+		.floating {
+			font-family: sans-serif;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+
+			.item-container {
+				height: 20px;
+				padding: 0 25px;
+				cursor: pointer;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.dropper {
+					display: flex;
+					align-items: center;
+
+					&:hover {
+						color: $main;
+					}
+
+					.arrow-icon {
+						font-size: 15px;
+					}
+				}
+			}
+
+			.float-container {
+				border-top: 1px solid themed("border");
+				padding: 10px 30px;
+				padding-right: 50%;
+				position: absolute;
+				height: 40vh;
+				left: 0;
+				right: 0;
+				top: 62px;
+				bottom: -300px;
+				background-color: themed("background");
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: flex-start;
+				z-index: 10;
+				cursor: default;
+
+				-webkit-box-shadow: 0px 10px 27px -20px themed("shadow");
+				-moz-box-shadow: 0px 10px 27px -20px themed("shadow");
+				box-shadow: 0px 10px 27px -20px themed("shadow");
+
+				.title-container {
+					position: absolute;
+					right: 50px;
+					bottom: 5px;
+					z-index: 9;
+
+					h6 {
+						font-size: 40px;
+						color: rgba(254, 254, 254, 0.609);
+					}
+				}
+
+				.cover {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					left: 50%;
+
+					.cover-fade {
+						height: 100%;
+						width: 100%;
+						background: rgb(254, 254, 254);
+						background: linear-gradient(
+							90deg,
+							themed("background") 10%,
+							rgba(255, 255, 255, 0) 100%
+						);
+						position: absolute;
+						z-index: 5;
+					}
+
+					.image-container {
+						height: 100%;
+						width: 100%;
+						position: relative;
+
+						.cover-image {
+							object-fit: cover;
+							object-position: 100% 40%;
+						}
+					}
+				}
+
+				.float-map {
+					margin: 2px 0;
+
+					&:hover {
+						text-decoration: underline;
+						color: $main;
+					}
+				}
+
+				p {
+					font-size: 13px;
+
+					display: inline;
+					transition: all 0.2s;
+				}
+			}
+		}
+	}
+}

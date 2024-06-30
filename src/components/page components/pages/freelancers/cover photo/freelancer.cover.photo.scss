@@ -1,0 +1,26 @@
+@import "./../../../../../theme/theme.scss";
+
+.freelancer-cover-photo {
+	@include themify($themes) {
+		position: fixed;
+		top: 0;
+		height: 35vh;
+		width: 100%;
+		z-index: -1;
+
+		@media (max-width: 900px) {
+			height: 250px;
+		}
+
+		.freelancer-cover-photo-container {
+			position: relative;
+			height: 100%;
+			width: 100%;
+
+			.cover-photo {
+				object-fit: cover;
+				object-position: 20% 25%;
+			}
+		}
+	}
+}
